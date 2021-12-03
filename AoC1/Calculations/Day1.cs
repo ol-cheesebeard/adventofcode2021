@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AoC1
+namespace AoC1.Calculations
 {
-    public class Calculations
+    public class Day1
     {
-        public static void FirstDay()
+        public static void Calculate()
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
             int previous = -1;
             Dictionary<string, int> depthChanges = new()
             {
@@ -38,7 +40,9 @@ namespace AoC1
                     }
                 }
             }
-            Console.WriteLine(depthChanges["increase"]);
+
+            watch.Stop();
+            Console.WriteLine($"{depthChanges["increase"]} increases. Found in {watch.ElapsedMilliseconds} milliseconds.");
         }
     }
 }

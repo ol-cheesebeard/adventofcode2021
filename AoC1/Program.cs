@@ -1,4 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using AoC1;
+using AoC1.Calculations;
 
-Calculations.FirstDay();
+Day1.Calculate();
