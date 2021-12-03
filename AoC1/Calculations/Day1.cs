@@ -42,7 +42,7 @@ namespace AoC1.Calculations
             }
 
             watch.Stop();
-            Console.WriteLine($"{depthChanges["increase"]} increases. Found in {watch.ElapsedMilliseconds} milliseconds.");
+            Console.WriteLine($"{depthChanges["increase"]} increases. Found in {watch.Elapsed} milliseconds.");
         }
     }
 }

@@ -3,3 +3,4 @@ using AoC1.Calculations;
 
 Day1.Calculate();
 Day2.Calculate();
+Day3.Calculate();

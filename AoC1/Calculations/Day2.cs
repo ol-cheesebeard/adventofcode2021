@@ -12,6 +12,8 @@ namespace AoC1.Calculations
     {
         public static void Calculate()
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
             string[] values = InputDay2.values.Split("\r\n");
             int xPos = 0;
             int yPos = 0;
@@ -33,7 +35,8 @@ namespace AoC1.Calculations
                         break;
                 }
             }
-            Console.WriteLine(xPos * yPos);
+            watch.Stop();
+            Console.WriteLine($"{xPos * yPos} found in {watch.Elapsed} ms");
         }
     }
 }
