@@ -32,15 +32,60 @@ namespace AoC1.Calculations
                 Point start = new Point(startCoords[0], startCoords[1]);
                 Point end = new Point(endCoords[0], endCoords[1]);
 
+
+
                 if (start.x == end.x || start.y == end.y)
                 {
                     getMovements(start, end);
+                }else if(isDiaganol(start, end))
+                {
+                    getMovements(start, end, true);
                 }
             }
         }
 
-        private static void getMovements(Point start, Point end)
+        private static bool isDiaganol(Point start, Point end)
         {
+            int xDiff = Math.Abs(start.x - end.x);
+            int yDiff = Math.Abs(start.y - end.y);
+            if (xDiff == yDiff) return true;
+            else return false;
+        }
+
+        private static void getMovements(Point start, Point end, bool isDiagnoal = false)
+        {
+            if (isDiagnoal)
+            {
+                if(start.x < end.x && start.y < end.y)
+                {
+                    while (start.x != end.x)
+                    {
+                        coordinates[start.x++, start.y++]++;
+                    }
+
+                }
+                else if(start.x < end.x && start.y > end.y)
+                {
+                    while (start.x != end.x)
+                    {
+                        coordinates[start.x++, start.y--]++;
+                    }
+                }else if(start.x > end.x && start.y < end.y)
+                {
+                    while (start.x != end.x)
+                    {
+                        coordinates[start.x--, start.y++]++;
+                    }
+                }
+                else
+                {
+                    while (start.x != end.x)
+                    {
+                        coordinates[start.x--, start.y--]++;
+                    }
+                }
+            }
+
             if(start.x == end.x) //vertical movement
             {
                 if(start.y <= end.y)
