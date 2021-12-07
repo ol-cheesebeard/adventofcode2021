@@ -37,14 +37,14 @@ namespace AoC1.Calculations
                 if (start.x == end.x || start.y == end.y)
                 {
                     getMovements(start, end);
-                }else if(isDiaganol(start, end))
+                }else if(isDiagonal(start, end))
                 {
                     getMovements(start, end, true);
                 }
             }
         }
 
-        private static bool isDiaganol(Point start, Point end)
+        private static bool isDiagonal(Point start, Point end)
         {
             int xDiff = Math.Abs(start.x - end.x);
             int yDiff = Math.Abs(start.y - end.y);
@@ -52,9 +52,9 @@ namespace AoC1.Calculations
             else return false;
         }
 
-        private static void getMovements(Point start, Point end, bool isDiagnoal = false)
+        private static void getMovements(Point start, Point end, bool isDiagonal = false)
         {
-            if (isDiagnoal)
+            if (isDiagonal)
             {
                 if(start.x < end.x && start.y < end.y)
                 {
