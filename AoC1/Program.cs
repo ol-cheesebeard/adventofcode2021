@@ -9,3 +9,5 @@ Day3.Calculate();
 Day4.Calculate();
 Day5.Calculate();
 Day6.Calculate();
+Day7.Calculate();
+Day7.Part2();
